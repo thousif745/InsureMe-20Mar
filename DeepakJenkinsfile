@@ -33,7 +33,7 @@ pipeline {
           // withCredentials([usernamePassword(credentialsId: 'docker-all-user', passwordVariable: 'docker-pass', usernameVariable: 'docker-user')]) {
           // withCredentials([usernameColonPassword(credentialsId: 'docker-id-user', variable: 'docker-all')]) {
            withCredentials([string(credentialsId: 'docker-code', variable: 'docker-var-code')]) {
-           sh 'docker login -u balunideepak -p docker-var-code
+           sh 'docker login -u balunideepak -p {docker-var-code}
                          }
                    }
                }
