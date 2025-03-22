@@ -42,6 +42,12 @@ pipeline {
         sh 'docker push balunideepak/insureme:latest'
                                 }
             }
+      stage('Ansible Playbook') {
+      steps {
+        ansiblePlaybook credentialsId: 'sshkey', disableHostKeyChecking: true, installation: 'ansible', inventory: 'deploy.yml', playbook: '', vaultTmpPath: ''
+                                }
+            }
+      
                 
      }
 }
